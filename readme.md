@@ -33,7 +33,6 @@ Many thanks for [Geert Kapteijns](http://kapteijns.org/) awesome post [Interacti
 
 # Still to do
 
-* figure out why encliosing the widget in padding messes up codemirror and jqconsole
 * Figure out multiline input
 * Make this easy to install in Atlas; like, maybe this should be an NPM package or something
 * figure out why jqconsole adds a newline before the user input prompt
