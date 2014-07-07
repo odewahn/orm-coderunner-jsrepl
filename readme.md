@@ -40,6 +40,7 @@ Many thanks for [Geert Kapteijns](http://kapteijns.org/) awesome post [Interacti
 * get jsrepl itself on a CDN
 * Implement the gist button 
 * Break out of an infinite loop (like, how to do ctrl+c)
+* stop coderunner from grabbing the focus when the page loads
 * Save the output of either the code window or the console as a gist so that you can share it with others. *NOT IMPLEMENTED YET -- COMING SOON*
 
 
