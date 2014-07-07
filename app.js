@@ -44,7 +44,8 @@
       // note that the element should be a textarea
       this.initCodemirror = function(e) {
 	     handle.codemirror = CodeMirror.fromTextArea(e, {
-			lineNumbers: true
+			lineNumbers: true,
+			autofocus: false
 		  });
       }
 
