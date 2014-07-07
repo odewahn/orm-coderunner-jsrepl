@@ -9,6 +9,7 @@
 
       <div ng-show="coderunnerCtrl.jsrepl_loaded" ng-model="coderunnerCtrl.jsrepl_loaded" >
          <a class="btn btn-primary" ng-click="coderunnerCtrl.toggleMode()">{{ coderunnerCtrl.control_button_label }}</a>
+         <a class="btn btn-primary">Gist it</a>
       </div>	
 	
    </div>

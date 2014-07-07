@@ -99,7 +99,7 @@
 	     replace: true,
 	     transclude: true,
 	     scope: true,
-	     templateUrl: 'coderunner.html',
+	     templateUrl: 'coderunner.tpl',
 	     link: function(scope, element, attrs) {
 		    scope.coderunnerCtrl.language = attrs.language;
 		    // Grab the original code sample that has been transcluded in
