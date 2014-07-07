@@ -1,4 +1,6 @@
-This project transforms Atlas markup like this:
+# O'Reilly Atlas CodeRunner
+
+This project transforms [O'Reilly Atlas](https://atlas.oreilly.com/) markup like this:
 
 ```html
 <pre data-executable="true" data-language="python">
@@ -31,11 +33,13 @@ Many thanks for [Geert Kapteijns](http://kapteijns.org/) awesome post [Interacti
 
 # Still to do
 
+* figure out why encliosing the widget in padding messes up codemirror and jqconsole
 * Figure out multiline input
 * Make this easy to install in Atlas; like, maybe this should be an NPM package or something
 * figure out why jqconsole adds a newline before the user input prompt
 * get jsrepl itself on a CDN
 * Implement the gist button 
 * Break out of an infinite loop (like, how to do ctrl+c)
+* Save the output of either the code window or the console as a gist so that you can share it with others. *NOT IMPLEMENTED YET -- COMING SOON*
 
 

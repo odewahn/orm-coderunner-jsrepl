@@ -22,12 +22,138 @@
    <link rel="stylesheet" type="text/css" href="stylesheets/coderunner.css"/>
    <link rel="stylesheet" type="text/css" href="stylesheets/codemirror.css"/>
    <link rel="stylesheet" type="text/css" href="stylesheets/console.css"/>
+   <link rel="stylesheet" type="text/css" href="stylesheets/html.css"/>
 	
 </head>
 
-<body >
+<body>
 
-		Consequat swag chillwave, ea polaroid try-hard reprehenderit  cupidatat. Carles salvia pop-up, deserunt  church-key bicycle rights Odd Future. Sustainable food truck XOXO, pug PBR deserunt  synth fanny pack aliquip Tonx brunch nulla  voluptate. Forage tattooed cornhole ut veniam deserunt, locavore ugh cillum  cred kale chips. Four loko jean shorts fixie, lomo quis small batch nostrud. Distillery Echo Park brunch crucifix, gluten-free non  irony post-ironic. Laborum keytar irure  High Life ullamco pop-up do Echo Park, cillum  small batch officia  gluten-free food truck freegan adipisicing.
+<a href="https://github.com/odewahn/orm-coderunner-jsrepl">
+   <img src="https://s3.amazonaws.com/orm-atlas-media/fork-on-github.png" class="fork-on-github">
+</a>
+
+<h1>Atlas Coderunner Plugin</h1>
+
+<p>This project transforms O'Reilly Atlas markup like this:</p>
+
+<pre>
+&lt;pre data-executable="true" data-language="python"&gt;
+import math
+for x in range(0, 1200, 30):
+   l = 20 * math.sin(x/57.3) + 50
+   print " "*int(l/2) + "*"*int(l/2)
+&lt;/pre&gt;
+</pre>
+
+	<p>Into a browser plugin where you can run the code, like this:</p>
+	<p><img src="orm-coderunner-jsrepl.png"></p>
+	<p>The plugin provides:</p>
+	<ul>
+	<li><a href="https://github.com/marijnh/codemirror">CodeMirror</a> for editing code sample.</li>
+	<li><a href="https://github.com/replit/jsrepl">JSREPL</a> for running the code sample.  There are many caveats on what you can do with this tool, but it is awesome.</li>
+	<li><a href="https://github.com/replit/jq-console">JQconsole</a> for viewing the output and providing a basic REPL for the selected language. (More on this in a bit)</li>
+	</ul>
+	<p>These will allow you to:</p>
+	<ul>
+	<li>Transform code samples (with caveats!) in Atlas into a live example in your project</li>
+	<li>Edit the code samples in a nice editor</li>
+	<li>Click "Run" to execute the code</li>
+	<li>Interact with the code in a console, including accepting user input (i.e., use Ruby's <em>gets</em> or Python's <em>input</em> and doing something with the result.)</li>
+	<li>Running general commands in a REPL</li>
+	</ul>
+	<p>Many thanks for <a href="http://kapteijns.org/">Geert Kapteijns</a> awesome post <a href="http://kapteijns.org/2014/03/21/ruby-repl-in-javascript.html">Interactive Ruby in the browser</a> for showing how to put JSREPL and JQ-CONSOLE together.</p>
+
+
+<h2>Running a python program</h2>
+
+This example runs a little python program that prints a sine wave:
+
+<pre>
+&lt;pre data-executable="true" data-language="python"&gt;
+import math
+for x in range(0, 1200, 30):
+   l = 20 * math.sin(x/57.3) + 50
+   print " "*int(l/2) + "*"*int(l/2)
+&lt;/pre&gt;
+</pre>
+
+To see it, wait for the interpreter to load and then press "Run".
+
+<pre data-executable="true" data-language="python">
+import math
+for x in range(0, 1200, 30):
+   l = 20 * math.sin(x/57.3) + 50
+   print " "*int(l/2) + "*"*int(l/2)
+</pre>	
+
+
+<h2>Defining a Python function and running it in the console</h2>
+
+This program defines a Python script that print's Pascal's triangle:
+
+<pre>
+&lt;pre data-executable="true" data-language="python"&gt;
+
+def triangle(n):
+   if n == 0:
+      return []
+   elif n == 1:
+      return [[1]]
+   else:
+      new_row = [1]
+      result = triangle(n-1)
+      last_row = result[-1]
+      for i in range(len(last_row)-1):
+         new_row.append(last_row[i] + last_row[i+1])
+      new_row += [1]
+      result.append(new_row)
+   return result
+
+def pascal(n):
+   for row in triangle(n):
+      print('{0:^120}'.format(row))
+
+&lt;/pre&gt;
+
+</pre>
+
+In this example, you hit "Run" and two functions get define.  You can then run them on the console by typing <code>triangle(10)</code> to get back a python object, or do <code>pascal(10)</code> to get a pretty printed version.
+
+<pre data-executable="true" data-language="python">
+def triangle(n):
+   if n == 0:
+      return []
+   elif n == 1:
+      return [[1]]
+   else:
+      new_row = [1]
+      result = triangle(n-1)
+      last_row = result[-1]
+      for i in range(len(last_row)-1):
+         new_row.append(last_row[i] + last_row[i+1])
+      new_row += [1]
+      result.append(new_row)
+   return result
+
+def pascal(n):
+   for row in triangle(n):
+      print('{0:^120}'.format(row))
+</pre>
+
+
+
+<h2>Read input from user in Ruby</h2>
+
+This example uses Ruby's <b>code</b> function to add two numbers:
+
+<pre>
+	puts "Enter A"
+	a = gets.chomp
+	puts "Enter B"
+	b = gets.chomp
+	c = Integer(a) + Integer(b)
+	puts c
+</pre>
 
 
 <pre data-executable="true" data-language="ruby">
@@ -39,15 +165,8 @@ c = Integer(a) + Integer(b)
 puts c
 </pre>
 	
-	Consequat swag chillwave, ea polaroid try-hard reprehenderit  cupidatat. Carles salvia pop-up, deserunt  church-key bicycle rights Odd Future. Sustainable food truck XOXO, pug PBR deserunt  synth fanny pack aliquip Tonx brunch nulla  voluptate. Forage tattooed cornhole ut veniam deserunt, locavore ugh cillum  cred kale chips. Four loko jean shorts fixie, lomo quis small batch nostrud. Distillery Echo Park brunch crucifix, gluten-free non  irony post-ironic. Laborum keytar irure  High Life ullamco pop-up do Echo Park, cillum  small batch officia  gluten-free food truck freegan adipisicing.
 
 
-<pre data-executable="true" data-language="python">
-import math
-for x in range(0, 1200, 30):
-   l = 20 * math.sin(x/57.3) + 100
-   print " "*int(l/2) + "*"*int(l/2)
-</pre>
 
 
 

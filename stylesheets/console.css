@@ -1,7 +1,7 @@
 /* The console container element */
 #console {
   height: 400px;
-  width: 750px;
+  width: 85%;
   position:relative;
   background-color: black;
   border: 2px solid #CCC;
