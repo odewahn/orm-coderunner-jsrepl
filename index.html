@@ -45,8 +45,16 @@ for x in range(0, 1200, 30):
 &lt;/pre&gt;
 </pre>
 
-	<p>Into a browser plugin where you can run the code, like this:</p>
-	<p><img src="orm-coderunner-jsrepl.png"></p>
+<p>Into a browser plugin where you can run the code, like this:</p>
+
+<pre data-executable="true" data-language="python">
+import math
+for x in range(0, 1200, 30):
+   l = 20 * math.sin(x/57.3) + 50
+   print " "*int(l/2) + "*"*int(l/2)
+</pre>
+	
+
 	<p>The plugin provides:</p>
 	<ul>
 	<li><a href="https://github.com/marijnh/codemirror">CodeMirror</a> for editing code sample.</li>
@@ -64,27 +72,7 @@ for x in range(0, 1200, 30):
 	<p>Many thanks for <a href="http://kapteijns.org/">Geert Kapteijns</a> awesome post <a href="http://kapteijns.org/2014/03/21/ruby-repl-in-javascript.html">Interactive Ruby in the browser</a> for showing how to put JSREPL and JQ-CONSOLE together.</p>
 
 
-<h2>Running a python program</h2>
-
-This example runs a little python program that prints a sine wave:
-
-<pre>
-&lt;pre data-executable="true" data-language="python"&gt;
-import math
-for x in range(0, 1200, 30):
-   l = 20 * math.sin(x/57.3) + 50
-   print " "*int(l/2) + "*"*int(l/2)
-&lt;/pre&gt;
-</pre>
-
-To see it, wait for the interpreter to load and then press the "Run" button.
-
-<pre data-executable="true" data-language="python">
-import math
-for x in range(0, 1200, 30):
-   l = 20 * math.sin(x/57.3) + 50
-   print " "*int(l/2) + "*"*int(l/2)
-</pre>	
+In addition to just running a program, some other use cases include:
 
 
 <h2>Defining a Python function and running it in the console</h2>
@@ -168,12 +156,6 @@ puts c
 </pre>
 	
 	
-Finally, here's a simple javascript console.
-
-<pre data-executable="true" data-language="javascript">
-
-</pre>	
-
 </body>
 
 </html>
