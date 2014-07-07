@@ -11,7 +11,7 @@ for x in range(0, 1200, 30):
 
 Into a browser plugin where you can run the code, like this:
 
-![orm-coderunner-jsrepl.png]
+<img src="orm-coderunner-jsrepl.png"></img>
 
 The plugin provides:
 
