@@ -22,18 +22,19 @@
 
 .coderunner .display-area {
    padding: 10px;	
+   width: 100%;
 }
 
 
 .coderunner .display-area .editor {
-   position: absolute;
+   position: relative;
    width: 100%;
    height: 350px;
 }
 
 .coderunner .display-area .output {
    overflow: auto;
-   position: absolute;
+   position: relative;
    width: 100%;
    height: 350px;
 }
