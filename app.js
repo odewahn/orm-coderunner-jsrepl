@@ -10,6 +10,8 @@
       this.control_button_label = "Run"
 
       // These are set by the directive that processes the executable code example
+      this.supported_languages = ["javascript", "coffeescript", "lua", "python", "ruby"];
+      this.error_message = ""
       this.language = "";
       this.code = "";
       this.codemirror = null;
@@ -17,8 +19,9 @@
 
       // load jsrepl execution environment
       this.jsrepl_loaded = false;
+
       this.jsrepl = new JSREPL({  
-		    input: function(callback) {
+         input: function(callback) {
 			   handle.jqconsole.Input(function(input) {  
 				  callback(input);  
 			   });
@@ -38,6 +41,8 @@
 		      callback: function() {}  
 		    }  
 		});
+		
+
 
 
       // Create a codemirror item and attach it to the passed element
@@ -107,10 +112,15 @@
 		    code = element.find(".editor").text();
 		    // replace the div with a textarea containing the code
 		    element.find(".editor").html("<textarea>"+code+"</textarea>");
-		    scope.coderunnerCtrl.code = code;
+		    scope.coderunnerCtrl.code = code;		
 		    scope.coderunnerCtrl.initCodemirror(element.find(".editor").find("textarea")[0]); //set up codemirror
 		    scope.coderunnerCtrl.initJQConsole(element.find(".output"));
-		    scope.coderunnerCtrl.initJSREPL();
+			if ($.inArray(scope.coderunnerCtrl.language, scope.coderunnerCtrl.supported_languages) > -1 ) {
+			    scope.coderunnerCtrl.initJSREPL();
+			} else {
+				scope.coderunnerCtrl.error_message = scope.coderunnerCtrl.language + " is not supported.";
+			}
+
 	     }
 	  }
    });
