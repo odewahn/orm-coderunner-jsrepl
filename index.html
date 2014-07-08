@@ -37,7 +37,7 @@
 <p>This project transforms O'Reilly Atlas markup like this:</p>
 
 <pre>
-&lt;pre data-executable="true" data-language="python"&gt;
+&lt;pre data-executable="true" data-code-language="python"&gt;
 import math
 for x in range(0, 1200, 30):
    l = 20 * math.sin(x/57.3) + 50
@@ -47,7 +47,7 @@ for x in range(0, 1200, 30):
 
 <p>Into a browser plugin where you can run the code, like this:</p>
 
-<pre data-executable="true" data-language="python">
+<pre data-executable="true" data-code-language="python">
 import math
 for x in range(0, 1200, 30):
    l = 20 * math.sin(x/57.3) + 50
@@ -55,21 +55,23 @@ for x in range(0, 1200, 30):
 </pre>
 	
 
-	<p>The plugin provides:</p>
-	<ul>
-	<li><a href="https://github.com/marijnh/codemirror">CodeMirror</a> for editing code sample.</li>
-	<li><a href="https://github.com/replit/jsrepl">JSREPL</a> for running the code sample.  There are many caveats on what you can do with this tool, but it is awesome.</li>
-	<li><a href="https://github.com/replit/jq-console">JQconsole</a> for viewing the output and providing a basic REPL for the selected language. (More on this in a bit)</li>
-	</ul>
-	<p>These will allow you to:</p>
-	<ul>
-	<li>Transform code samples (with caveats!) in Atlas into a live example in your project</li>
-	<li>Edit the code samples in a nice editor</li>
-	<li>Click "Run" to execute the code</li>
-	<li>Interact with the code in a console, including accepting user input (i.e., use Ruby's <em>gets</em> or Python's <em>input</em> and doing something with the result.)</li>
-	<li>Running general commands in a REPL</li>
-	</ul>
-	<p>Many thanks for <a href="http://kapteijns.org/">Geert Kapteijns</a> awesome post <a href="http://kapteijns.org/2014/03/21/ruby-repl-in-javascript.html">Interactive Ruby in the browser</a> for showing how to put JSREPL and JQ-CONSOLE together.</p>
+<p>The plugin provides:</p>
+<ul>
+<li><a href="https://github.com/marijnh/codemirror">CodeMirror</a> for editing code sample.</li>
+<li><a href="https://github.com/replit/jsrepl">JSREPL</a> for running the code sample.  There are many caveats on what you can do with this tool, but it is awesome.</li>
+<li><a href="https://github.com/replit/jq-console">JQconsole</a> for viewing the output and providing a basic REPL for the selected language. (More on this in a bit)</li>
+</ul>
+
+<p>These will allow you to:</p>
+<ul>
+<li>Transform code samples (with caveats!) in Atlas into a live example in your project</li>
+<li>Edit the code samples in a nice editor</li>
+<li>Click "Run" to execute the code</li>
+<li>Interact with the code in a console, including accepting user input (i.e., use Ruby's <em>gets</em> or Python's <em>input</em> and doing something with the result.)</li>
+<li>Running general commands in a REPL</li>
+</ul>
+
+<p>This project was hugely moved forward thanks to <a href="http://kapteijns.org/">Geert Kapteijns</a> awesome post <a href="http://kapteijns.org/2014/03/21/ruby-repl-in-javascript.html">Interactive Ruby in the browser</a> for showing how to put JSREPL and JQ-CONSOLE together.</p>
 
 
 In addition to just running a program, some other use cases include:
@@ -80,7 +82,7 @@ In addition to just running a program, some other use cases include:
 This program defines a Python script that print's Pascal's triangle:
 
 <pre>
-&lt;pre data-executable="true" data-language="python"&gt;
+&lt;pre data-executable="true" data-code-language="python"&gt;
 
 def triangle(n):
    if n == 0:
@@ -107,7 +109,7 @@ def pascal(n):
 
 In this example, you hit "Run" and two functions get define.  You can then run them on the console by typing <code>triangle(10)</code> to get back a python object, or do <code>pascal(10)</code> to get a pretty printed version.
 
-<pre data-executable="true" data-language="python">
+<pre data-executable="true" data-code-language="python">
 def triangle(n):
    if n == 0:
       return []
@@ -135,17 +137,19 @@ def pascal(n):
 This example uses Ruby's <b>code</b> function to add two numbers:
 
 <pre>
-	puts "Enter A"
-	a = gets.chomp
-	puts "Enter B"
-	b = gets.chomp
-	puts "The answer is "
-	c = Integer(a) + Integer(b)
-	puts c
+&lt;pre data-executable="true" data-code-language="python"&gt;
+puts "Enter A"
+a = gets.chomp
+puts "Enter B"
+b = gets.chomp
+puts "The answer is "
+c = Integer(a) + Integer(b)
+puts c
+&lt;/pre&gt;
 </pre>
 
 
-<pre data-executable="true" data-language="ruby">
+<pre data-executable="true" data-code-language="ruby">
 puts "Enter A"
 a = gets.chomp
 puts "Enter B"

@@ -107,7 +107,7 @@
 	     scope: true,
 	     templateUrl: 'coderunner.tpl',
 	     link: function(scope, element, attrs) {
-		    scope.coderunnerCtrl.language = attrs.language;
+		    scope.coderunnerCtrl.language = attrs.codeLanguage;
 		    // Grab the original code sample that has been transcluded in
 		    code = element.find(".editor").text();
 		    // replace the div with a textarea containing the code
